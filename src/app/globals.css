@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #1e114a;
+  --color-navy-light: #2a1a63;
+  --color-purple: #7f3aef;
+  --color-purple-hover: #6a2dd4;
+  --color-purple-soft: rgba(127, 58, 239, 0.12);
+  --color-lavender: #e9e2f2;
+  --color-ink: #0d0d0d;
+  --color-muted: #6b6b80;
+
+  --background: #ffffff;
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+  --color-purple: var(--color-purple);
+  --color-purple-hover: var(--color-purple-hover);
+  --color-purple-soft: var(--color-purple-soft);
+  --color-lavender: var(--color-lavender);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+
+  --font-sans: var(--font-cabin);
+
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cabin), Arial, Helvetica, sans-serif;
+}
+
+/* Dot grid background pattern — used on Hero, El Problema, La Solución */
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(30, 17, 74, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+.dot-grid-dark {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* Minimum touch target helper — 44x44px rule (Sección 10 del brief) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Utility: hide scrollbar for marquee-like elements while keeping scroll behavior */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
