@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import { MessageCircle } from "lucide-react";
 import Chip from "@/components/ui/Chip";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
-import { waLink, WA_MESSAGES } from "@/lib/site";
+import { waLink, WA_MESSAGES, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portafolio",
   description:
     "Proyectos demo desarrollados por AS BIT para mostrar el nivel de calidad que entregamos: hotel, clínica dental, salón de belleza y cafetería.",
+  // Sin esto hereda el canonical de la home (layout.tsx) y Google puede
+  // tratar esta página como duplicada en vez de indexarla aparte.
+  alternates: {
+    canonical: `${SITE_URL}/portafolio/`,
+  },
 };
 
 export default function PortafolioPage() {
