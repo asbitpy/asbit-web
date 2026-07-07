@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import DemoMockup from "@/components/ui/DemoMockup";
 import Chip from "@/components/ui/Chip";
@@ -112,12 +113,12 @@ export default function PortfolioPreview() {
         </div>
 
         <div className="mt-14 flex justify-center">
-          <a
+          <Link
             href="/portafolio"
             className="touch-target inline-flex items-center gap-2 text-[16px] font-semibold text-navy underline-offset-4 hover:text-purple hover:underline"
           >
             Ver portafolio completo <ArrowRight size={17} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

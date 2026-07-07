@@ -5,6 +5,8 @@
 // externos simultáneos congelaban el renderer y dejaban el hero en blanco al
 // cargar, contradiciendo la regla de rendimiento del brief (Sección 10).
 
+import { assetPath } from "@/lib/site";
+
 export type DemoCategoria = "web" | "seo" | "sistemas" | "automatizacion";
 
 export interface Demo {
@@ -35,7 +37,7 @@ export const DEMOS: Demo[] = [
     frase:
       "Reservas claras y presentación premium para un huésped que decide en segundos.",
     url: "https://gomezarturosantander-cloud.github.io/hoteldemo-AS-BIT/",
-    imagen: "/demos/hotel.webp",
+    imagen: assetPath("/demos/hotel.webp"),
     categorias: ["web", "seo"],
     previewHome: true,
   },
@@ -45,7 +47,7 @@ export const DEMOS: Demo[] = [
     nombre: "Clínica odontológica",
     frase: "Confianza y turnos: lo que necesita un paciente antes de agendar.",
     url: "https://gomezarturosantander-cloud.github.io/CLINICA-DENTAL/",
-    imagen: "/demos/clinica-dental.webp",
+    imagen: assetPath("/demos/clinica-dental.webp"),
     categorias: ["web", "seo"],
     previewHome: true,
   },
@@ -55,7 +57,7 @@ export const DEMOS: Demo[] = [
     nombre: "Salón de belleza",
     frase: "Visual atractivo pensado para reservar turno desde el celular.",
     url: "https://gomezarturosantander-cloud.github.io/Salondebelleza-demo/",
-    imagen: "/demos/salon-belleza.webp",
+    imagen: assetPath("/demos/salon-belleza.webp"),
     categorias: ["web", "seo"],
     // Slot grande del bento asimétrico (Sección 8): estética editorial
     // (LUMIÈRE) recomendada en el brief de negocio/arquitectura.
@@ -68,7 +70,7 @@ export const DEMOS: Demo[] = [
     nombre: "Cafetería",
     frase: "Ambiente y menú que dan ganas de ir, optimizado para mobile.",
     url: "https://gomezarturosantander-cloud.github.io/ARTURO/",
-    imagen: "/demos/cafeteria.webp",
+    imagen: assetPath("/demos/cafeteria.webp"),
     categorias: ["web", "seo"],
     previewHome: true,
   },
@@ -78,7 +80,7 @@ export const DEMOS: Demo[] = [
     nombre: "Quinta Paraíso",
     frase: "Reservas con urgencia real: disponibilidad y confianza para decidir un fin de semana.",
     url: "https://gomezarturosantander-cloud.github.io/quintademo-AS-BIT/",
-    imagen: "/demos/quinta.webp",
+    imagen: assetPath("/demos/quinta.webp"),
     categorias: ["web", "seo"],
   },
   {
@@ -87,7 +89,7 @@ export const DEMOS: Demo[] = [
     nombre: "MIGA",
     frase: "Fotografía que vende sola y pedido directo por WhatsApp, sin fricción.",
     url: "https://gomezarturosantander-cloud.github.io/DEMO-PANADERIA/",
-    imagen: "/demos/panaderia.webp",
+    imagen: assetPath("/demos/panaderia.webp"),
     categorias: ["web", "seo"],
   },
 ];

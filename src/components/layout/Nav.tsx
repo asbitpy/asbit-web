@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/ui/Logo";
@@ -56,13 +57,13 @@ export default function Nav() {
 
           <div className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-[15px] font-medium text-white/80 transition-colors hover:text-purple"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -98,14 +99,14 @@ export default function Nav() {
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-navy md:hidden"
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className="touch-target flex items-center text-2xl font-semibold text-white"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href={waLink(WA_MESSAGES.nav)}

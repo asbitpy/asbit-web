@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "@/components/ui/Logo";
 import { CONTACT } from "@/lib/site";
 
@@ -34,12 +35,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {NAV_COLUMN.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     className="touch-target inline-flex items-center text-[15px] text-white/80 transition-colors hover:text-purple"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -52,12 +53,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {PILARES_COLUMN.map((item, i) => (
                 <li key={i}>
-                  <a
+                  <Link
                     href={item.href}
                     className="touch-target inline-flex items-center text-[15px] text-white/80 transition-colors hover:text-purple"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

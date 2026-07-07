@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
 import "./globals.css";
-import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, CONTACT } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, CONTACT, assetPath } from "@/lib/site";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import MobileWhatsappBar from "@/components/layout/MobileWhatsappBar";
@@ -39,7 +39,9 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/og-image.png",
+        // URL absoluta a propósito (no relativa): los bots de OG/Twitter no
+        // resuelven basePath, necesitan el link completo.
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: assetPath("/favicon.svg"),
   },
   alternates: {
     canonical: SITE_URL,

@@ -1,10 +1,25 @@
 // Configuración central del sitio: dominio, contacto y helpers de WhatsApp.
 //
-// NOTA IMPORTANTE: el dominio real todavía no existe. NEXT_PUBLIC_SITE_URL
-// es un placeholder — reemplazar cuando se compre el dominio real
-// (actualizar la env var, no hace falta tocar código).
+// NOTA IMPORTANTE: el dominio real todavía no existe. Mientras tanto el sitio
+// vive en GitHub Pages. NEXT_PUBLIC_SITE_URL sigue siendo reemplazable por
+// env var — actualizar este valor (o setear la env var) cuando se compre el
+// dominio real, no hace falta tocar más código.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://asbit.com.py"; // TODO: reemplazar cuando se compre el dominio real
+  process.env.NEXT_PUBLIC_SITE_URL || "https://asbitpy.github.io/asbit-web"; // TODO: reemplazar cuando se compre el dominio real
+
+// Subdirectorio donde vive el sitio en GitHub Pages (basePath de next.config.ts).
+// Vacío ("") cuando el sitio viva en la raíz de un dominio propio — no hace
+// falta tocar los usos de assetPath() más abajo, solo esta env var.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+/**
+ * Ruta absoluta same-origin para assets locales (imágenes en /public, ícono,
+ * etc). Necesario porque next/image con images.unoptimized no antepone
+ * basePath automáticamente a los src locales.
+ */
+export function assetPath(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
 
 export const SITE_NAME = "AS BIT";
 export const SITE_TAGLINE = "Impulso digital";
